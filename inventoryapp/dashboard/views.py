@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # Create your views here.
 from django.http import HttpResponse
+
 
 def index(request):
     return render(request, 'dashboard/index.html')
@@ -16,3 +17,5 @@ def product(request):
 
 def order(request):
     return render(request, 'dashboard/order.html')
+
+
