@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import auth
 # Create your views here.
 
-
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == 'POST':
@@ -38,3 +38,7 @@ def mylogin(request):
 def logout(request):
     auth.logout(request)
     return redirect("home")
+
+@login_required
+def profile(request):
+    return render(request, 'user/profile.html')
