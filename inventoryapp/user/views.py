@@ -31,10 +31,10 @@ def mylogin(request):
                 auth.login(request, user)
                 return redirect("dashboard-index")
     context= {'form' : form}
-    return render(request, 'dashboard/my-login.html', context=context)
+    return render(request, 'user/login.html', context=context)
 
 
 
 def logout(request):
     auth.logout(request)
-    return redirect("login")
+    return redirect("home")

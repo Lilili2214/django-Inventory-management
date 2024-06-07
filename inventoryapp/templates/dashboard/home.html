@@ -1,0 +1,15 @@
+{% extends "partials/base.html" %}
+
+{% block title %}Welcome{% endblock  %}
+
+
+{% block content %}
+<div class='container'>
+    <br>
+    <h3 style="font-weight: bold;text-align: center;">Welcome User, You need to Log In first to use our service!</h3>
+    <hr>
+    <p style="text-align: center;">Already have an account?   <a href="{% url "user-login" %}">Log In</a></p>
+    <p style="text-align: center;"><a href="{% url "user-register" %}">Register</a></p>
+</div>
+
+{% endblock %}
