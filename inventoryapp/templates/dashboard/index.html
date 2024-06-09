@@ -16,10 +16,10 @@
                         var myChart1 = new Chart(ctx, {
                             type: 'pie',
                             data: {
-                                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                labels: {{category_list|safe}},
                                 datasets: [{
                                     label: 'Products',
-                                    data: [12, 19, 3, 5, 2, 3],
+                                    data: {{value_by_category|safe}},
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 1)',
                                         'rgba(54, 162, 235, 1)',
@@ -60,11 +60,11 @@
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {
-                                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                labels: {{product_list | safe}},
                                 datasets: [{
                                     label: 'Products',
-                                    data: [12, 19, 3, 5, 2, 3],
-                                    backgroundColor: [
+                                    data: {{ value_by_product|safe}},
+                                    backgroundColor: [  
                                         'rgba(255, 99, 132, 1)',
                                         'rgba(54, 162, 235, 1)',
                                         'rgba(255, 206, 86, 1)',

@@ -1,0 +1,71 @@
+
+{% extends "partials/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Staff Detail{% endblock  %}
+
+{% block content %}
+{% include "partials/topnav.html" %}
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        Staff Page
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span class="h4"> Profile Information</span> 
+                                {% comment %} <a class="btn btn-info btn-sm float-right"
+                                    href="{% url "user-profile_update" staff.id %}">Edit</a> {% endcomment %}
+                                <hr> 
+                                {% if staff %}
+                                <table class="table bg-white table-borderless">
+                                  
+                                   <tbody>
+                                    <tr>
+                                        <th scope="row">Name</th>
+                                        <td>{{staff.username}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email</th>
+                                        <td>{{staff.email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Phone</th>
+                                        <td>{{staff.profile.phone}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Address</th>
+                                        <td>{{staff.profile.address}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            {% else %}                                
+                                <h4>Staff does not exist!</h4>
+                            {% endif %}
+                            </div>
+                            <div class="col-md-4">
+                                <img class="img-thumbnail" src="{{ staff.profile.image.url}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <a class="btn btn-info btn-sm float-left"
+                                    href="{% url "dashboard-staff" %}">Cancel</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    
+{% endblock %}

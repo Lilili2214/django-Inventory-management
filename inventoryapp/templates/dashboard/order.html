@@ -21,15 +21,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for order in orders %}
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row">{{order.id}}</th>
+                        <td>{{order.product.name}}</td>
+                        <td>{{order.product.category}}</td>
+                        <td>{{order.order_quantity}}</td>
                         <td>
-                            Broni
+                            {{order.staff}}
                         </td>
                     </tr>
+                    {% endfor %}
                     <tr>
                         <th scope="row">2</th>
                         <td>Jacob</td>
